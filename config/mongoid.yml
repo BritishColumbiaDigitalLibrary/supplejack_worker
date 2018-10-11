@@ -40,8 +40,10 @@ staging:
     default:
       database: worker_staging
       hosts:
-        - <%= ENV['MONGOID_HOST'] || 'localhost:27017' %>
+        # - <%= ENV['MONGOID_HOST'] || 'localhost:27017' %>
+        - <%= 'mongodb-replicaset-staging.cloud.digitalnz.org:27017' %>
       options:
+        connect: :direct
         read:
           mode: :primary
         pool_size: 500
@@ -50,6 +52,7 @@ staging:
       hosts:
         <%= ENV['API_MONGOID_HOSTS'].gsub(/\s+/, "").split(',') %>
       options:
+        connect: :direct
         read:
           mode: :primary
         pool_size: 500
