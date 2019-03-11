@@ -29,7 +29,10 @@ gem 'supplejack_common', git: 'https://github.com/DigitalNZ/supplejack_common.gi
 
 gem 'whenever', require: false
 gem 'rubocop', require: false
-gem 'elastic-apm'
+
+group :staging, :production do
+  gem 'elastic-apm'
+end
 
 group :test do
   gem 'cucumber-rails', require: false
