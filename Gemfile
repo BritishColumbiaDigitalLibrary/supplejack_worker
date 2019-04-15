@@ -29,6 +29,7 @@ gem 'supplejack_common', git: 'https://github.com/DigitalNZ/supplejack_common.gi
 
 gem 'whenever', require: false
 gem 'rubocop', require: false
+gem 'listen', '>= 3.0.5', '< 3.2'
 
 group :test do
   gem 'cucumber-rails', require: false
@@ -44,7 +45,6 @@ end
 
 group :development do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry'
   gem 'pry-byebug'
   gem 'spring'
